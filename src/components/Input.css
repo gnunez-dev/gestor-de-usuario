@@ -17,4 +17,5 @@
     border: 1px solid #dbdbdb;
     width: 100%;
     box-sizing: border-box;
+    min-height: 40px;
 }

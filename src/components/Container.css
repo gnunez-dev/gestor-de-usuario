@@ -2,3 +2,8 @@
     max-width: 1240px;
     margin-inline: auto
 }
+
+.container h1{
+    margin: 30px auto 20px;
+    text-align:center
+}
