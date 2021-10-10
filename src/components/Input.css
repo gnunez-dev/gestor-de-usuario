@@ -1,0 +1,20 @@
+.filed{
+    margin: 5px auto 20px;
+}
+.filed label{
+    display: block;
+    color: #333;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 1.2;
+    margin-bottom: 5px;
+}
+
+.filed input{
+    background-color: #fff;
+    border-radius: 3px;
+    padding: 5px 10px;
+    border: 1px solid #dbdbdb;
+    width: 100%;
+    box-sizing: border-box;
+}

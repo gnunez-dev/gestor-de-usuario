@@ -1,0 +1,16 @@
+button.button{
+    transition: all 0.5s ease;
+    background-color: #333;
+    color: #fff;
+    border-radius: 3px;
+    border: 0;
+    padding: 15px 30px;
+    text-align: center;
+    display: table;
+    margin: 10px auto 0
+}
+
+button.button:hover{
+    box-shadow: 1px 1px 7px rgba(0,0,0,0.3);
+    background-color: rgb(25, 131, 158);
+}

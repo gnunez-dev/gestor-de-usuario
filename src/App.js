@@ -1,24 +1,66 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react'
+import useFormulario from './hooks/useFormulario'
+import Input from './components/Input'
+import Card from './components/Card'
+import Container from './components/Container'
+import Button from './components/Button'
 
 function App() {
+
+  const [usuarios, setUsuarios] = useState([]);
+  const [formulario, handleChange, reset] = useFormulario({
+    name: '',
+    lastname:'',
+    email: ''
+  })
+
+  const submit = e => {
+    e.preventDefault() //esto es para evitar que haga el evento que tiene por defecto, como actualizar la pág
+    
+    setUsuarios([
+      ...usuarios,
+      formulario,
+    ])
+
+    reset()
+  }
+
+  //console.log(formulario, usuarios)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <Card>
+        <form onSubmit={submit}>
+          <Input
+            label="Nombre"
+            name="name"
+            value={formulario.name}
+            onChange={handleChange}
+          />
+          <Input
+            label="Apellido"
+            name="lastname"
+            value={formulario.lastname}
+            onChange={handleChange}
+          />
+          <Input
+            label="E-mail"
+            name="email"
+            value={formulario.email}
+            onChange={handleChange}
+          />
+          <Button>Enviar</Button>
+        </form>
+      </Card>
+      <Card>
+        <ul>
+          {usuarios.map( x => {
+              return <li key={x.email}>{`${x.name} ${x.lastname}: ${x.email}`}</li>
+          })}
+
+        </ul>
+      </Card>
+    </Container>
   );
 }
 
