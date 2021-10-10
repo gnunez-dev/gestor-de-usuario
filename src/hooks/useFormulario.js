@@ -2,11 +2,11 @@ import { useState } from "react"
 
 /**
  * Lo que se hace aquí es crear un hooks propio. Este hooks es para manejar el estado del formulario.
- *  Se recibe por parametro el estado inicial del formilario
+ *  Se recibe por parametro el estado inicial del formulario
  */
 
 const useFormulario = ( inicial ) => {
-    const [ formulario, setFormulario ] = useState(inicial) //se hace un destructurin de useState
+    const [ formulario, setFormulario ] = useState(inicial) //se hace un destructuring de useState
 
     /*
     Se crea la funcion que se va a encargar de manejar los cambios en los elementos del formulario.
@@ -30,10 +30,10 @@ const useFormulario = ( inicial ) => {
     }
 
     const reset = () => {
-        setFormulario(inicial) // setea el formulario con su estado inicial
+        setFormulario(inicial) // setea el formulario a su estado inicial
     }
 
-    return [formulario, handleChange, reset]    //se retorna el obj formulario, con la función que maneja los cambios
+    return [formulario, handleChange, reset]    //se retorna el obj formulario, con la función que maneja los cambios, y otra función que lo devuelve a su estado inicial
 
 }
 
